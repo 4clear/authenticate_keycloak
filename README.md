@@ -1,6 +1,7 @@
 # authenticate_keycloak
 
 make .env file to call it from __init__.py
+
 example:
 
 ```bash
