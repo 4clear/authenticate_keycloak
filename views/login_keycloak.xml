@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <template id="auth_keycloak" name="Authenticate Keycloak">
+            <t t-if="keycloak_is_active">
+                <div class="o_auth_oauth_providers list-group mt-1 mb-1 text-start">
+                    <a class="list-group-item list-group-item-action py-2" t-att-href="keycloak_url">
+                        <i t-att-class="keycloak_css_class"/>
+                        <t t-esc="keycloak_button_label"/>
+                    </a>
+                </div>
+            </t>
+        </template>
+        <template id="login" inherit_id="web.login" name="Authenticate Keycloak">
+            <xpath expr="//div[hasclass('o_login_auth')]" position="inside">
+                <t t-call="authenticate_keycloak.auth_keycloak"/>
+            </xpath>
+        </template>
+</odoo>

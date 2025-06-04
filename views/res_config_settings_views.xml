@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form_authenticate_keycloak" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.authenticate_keycloak</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Authenticate Keycloak" string="Authenticate Keycloak" name="authenticate_keycloak">
+                    <block title="Settings" name="authenticate_keycloak_settings">
+                        <setting id="active_status">
+                            <field name="auth_keycloak_is_active"/>
+                        </setting>
+                        <setting id="button_label">
+                            <field name="auth_keycloak_button_label"/>
+                        </setting>
+                        <setting id="icon">
+                            <field name="auth_keycloak_css_class"/>
+                        </setting>
+                    </block>
+                    <block title="Environment" name="authenticate_keycloak_env">
+                        <setting id="client_id">
+                            <field name="auth_keycloak_client_id"/>
+                        </setting>
+                        <setting id="base_url">
+                            <field name="auth_keycloak_base_url"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
